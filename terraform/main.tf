@@ -2,10 +2,6 @@ provider "aws" {
   region = "us-east-1"
 }
 
-# S3 Bucket
-resource "aws_s3_bucket" "app_bucket" {
-  bucket = var.bucket_name
-}
 
 # IAM Role for EC2 Instance with S3 Permissions
 resource "aws_iam_role" "ec2_role" {
@@ -35,8 +31,8 @@ resource "aws_iam_policy" "s3_access_policy" {
         Action   : ["s3:*"],
         Effect   : "Allow",
         Resource : [
-          aws_s3_bucket.app_bucket.arn,
-          "${aws_s3_bucket.app_bucket.arn}/*"
+          "arn:aws:s3:::${var.bucket_name}",
+          "arn:aws:s3:::${var.bucket_name}/*"
         ]
       }
     ]
