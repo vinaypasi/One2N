@@ -39,34 +39,7 @@ The service exposes a single endpoint:
 
 ## Instructions
 
-### Part 1: HTTP Service
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/username/repository.git
-   cd repository
-   ```
-
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Set environment variables:
-   ```bash
-   export BUCKET_NAME=<your-s3-bucket-name>
-   ```
-
-4. Run the service:
-   ```bash
-   python app.py
-   ```
-
-5. Access the service:
-   - Example: `http://localhost:5000/list-bucket-content`
-   - Example: `http://localhost:5000/list-bucket-content/dir1`
-
-### Part 2: Terraform Deployment
+### Terraform Deployment
 
 1. Navigate to the `terraform` folder:
    ```bash
